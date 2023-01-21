@@ -1,0 +1,88 @@
+* { margin: 0; padding: 0; }
+
+/*cosmo_animation*/
+
+html, body, .container {
+  background: #2a2a2a;
+  font-family: open sans;
+  height: 100%;
+}
+
+
+.container {
+  width: 100%;
+  display: table;
+}
+
+.container .cosmo {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.container .cosmo .animation_cos {
+  display: inline-block;
+  position: relative;
+}
+
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 5px solid crimson;
+  position: absolute;
+  margin: -30px 0 0 0;
+}
+
+.box:first-child {
+  animation: cos_1 2s ease-in-out alternate infinite;
+  opacity: 0;
+}
+.box:nth-child(2) {
+  animation: cos_1 5s ease-in-out alternate infinite;
+  opacity: 0;
+}
+.box:last-child {
+  animation: cos_1 2s ease-in-out alternate infinite;
+  opacity: 0;
+}
+
+
+.title {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: crimson;
+  margin-left: -10px;
+  animation: cos_2 2s 100ms ease-in-out alternate infinite forwards;
+}
+
+@keyframes cos_1 {
+
+  0% {
+    opacity: 0;
+    transform: rotatey(360deg);
+  }
+
+  30%, 100% {
+    opacity: 1;
+    transform: scale(2) rotate(360deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1) rotate(0deg);
+  }
+
+}
+
+@keyframes cos_2 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(2);
+  }
+}
